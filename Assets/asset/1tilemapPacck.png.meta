@@ -117,6 +117,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -183,6 +184,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -857,6 +870,38 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      1tilemapPacck_0: -7890416666581968758
+      1tilemapPacck_1: 8133339730834653185
+      1tilemapPacck_10: 1927662030280878426
+      1tilemapPacck_11: -966310297048085737
+      1tilemapPacck_12: -8866544869167035015
+      1tilemapPacck_13: 7234743058195003247
+      1tilemapPacck_14: -2066849345761901678
+      1tilemapPacck_15: -4216681095903373719
+      1tilemapPacck_16: -8190567783863414939
+      1tilemapPacck_17: 6031067808129130001
+      1tilemapPacck_18: -4558700978061021934
+      1tilemapPacck_19: -6267585603386769280
+      1tilemapPacck_2: -8833564428548003850
+      1tilemapPacck_20: 4310859644027203632
+      1tilemapPacck_21: -5934337370568001946
+      1tilemapPacck_22: -3409540979119588471
+      1tilemapPacck_23: -1007605046486859029
+      1tilemapPacck_24: -5407672185242142352
+      1tilemapPacck_25: 982981922405693579
+      1tilemapPacck_26: -5107943380719962376
+      1tilemapPacck_27: 4482075574771454557
+      1tilemapPacck_28: -5634831827168070828
+      1tilemapPacck_29: -5879923261834673618
+      1tilemapPacck_3: 3335364133246611125
+      1tilemapPacck_30: 626704167753184532
+      1tilemapPacck_4: 921573794654869679
+      1tilemapPacck_5: 1853786097803174795
+      1tilemapPacck_6: -6555786122268434902
+      1tilemapPacck_7: 5549562577003564335
+      1tilemapPacck_8: -752841091510607116
+      1tilemapPacck_9: -2109730455347773079
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -144,6 +144,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -210,6 +211,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1073,6 +1086,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      pngfind.com-animated-png-images-5463926_0: 840665480262292797
+      pngfind.com-animated-png-images-5463926_1: 3750355464193050210
+      pngfind.com-animated-png-images-5463926_10: -2613746207800605924
+      pngfind.com-animated-png-images-5463926_11: -4046473948102759991
+      pngfind.com-animated-png-images-5463926_12: 564407700002052637
+      pngfind.com-animated-png-images-5463926_13: -6689630678356256204
+      pngfind.com-animated-png-images-5463926_14: -3220716098398242292
+      pngfind.com-animated-png-images-5463926_15: -358854962070219135
+      pngfind.com-animated-png-images-5463926_16: -8326100900516372885
+      pngfind.com-animated-png-images-5463926_17: -7405672934943036379
+      pngfind.com-animated-png-images-5463926_18: -2066626261011538752
+      pngfind.com-animated-png-images-5463926_19: -2401115210689998024
+      pngfind.com-animated-png-images-5463926_2: 1745044415846088492
+      pngfind.com-animated-png-images-5463926_20: -8419194366747105523
+      pngfind.com-animated-png-images-5463926_21: -5639405137821691788
+      pngfind.com-animated-png-images-5463926_22: 1958717285156602743
+      pngfind.com-animated-png-images-5463926_23: 3619120583677990717
+      pngfind.com-animated-png-images-5463926_24: -181891171079270157
+      pngfind.com-animated-png-images-5463926_25: 654821489508104813
+      pngfind.com-animated-png-images-5463926_26: 8134234491559769960
+      pngfind.com-animated-png-images-5463926_27: 4319980508662718445
+      pngfind.com-animated-png-images-5463926_28: -1608841343704505809
+      pngfind.com-animated-png-images-5463926_29: 1815405817710619395
+      pngfind.com-animated-png-images-5463926_3: 3886582952605336941
+      pngfind.com-animated-png-images-5463926_30: 8208747686300875549
+      pngfind.com-animated-png-images-5463926_31: 4903512420800996842
+      pngfind.com-animated-png-images-5463926_32: -659528899238366159
+      pngfind.com-animated-png-images-5463926_33: -2572590131370742722
+      pngfind.com-animated-png-images-5463926_34: -6157863814476770461
+      pngfind.com-animated-png-images-5463926_35: 7390742833673416809
+      pngfind.com-animated-png-images-5463926_36: 2287595931735565650
+      pngfind.com-animated-png-images-5463926_37: 2998138534143282562
+      pngfind.com-animated-png-images-5463926_38: -6457256151036947129
+      pngfind.com-animated-png-images-5463926_39: 3322644523441440239
+      pngfind.com-animated-png-images-5463926_4: -5946611550751245909
+      pngfind.com-animated-png-images-5463926_5: -6080732533052915702
+      pngfind.com-animated-png-images-5463926_6: 6707669053587549383
+      pngfind.com-animated-png-images-5463926_7: -9075146723434349318
+      pngfind.com-animated-png-images-5463926_8: -3266593792370239923
+      pngfind.com-animated-png-images-5463926_9: 826850973456814234
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
