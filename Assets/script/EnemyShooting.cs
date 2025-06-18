@@ -1,36 +1,84 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
+    [Header("Shooting Settings")]
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public float fireRate = 1.5f;
-    public float fireRange = 10f;
-    private float nextFireTime;
+    public float fireRate = 1f; // Shots per second
+    public float bulletSpeed = 8f;
+    public float detectionRange = 12f;
+    public LayerMask playerLayerMask = -1; // Which layers are considered player
+    
 
-    Transform player;
-
+    
+    private float nextFireTime = 0f;
+    private Transform player;
+    
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
-    void Update()
-    {
-        if (!player) return;
-
-        Vector2 direction = (player.position - transform.position).normalized;
-        transform.up = direction;
-
-        if (Vector2.Distance(transform.position, player.position) <= fireRange && Time.time >= nextFireTime)
+        // Find player at start
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
         {
-            Shoot();
-            nextFireTime = Time.time + fireRate;
+            player = playerObj.transform;
         }
     }
-
-    void Shoot()
+    
+    void Update()
     {
-        Instantiate(bulletPrefab, firePoint.position, transform.rotation);
+        if (player == null) return;
+        
+        if (Time.time >= nextFireTime)
+        {
+            if (IsPlayerInRange())
+            {
+                Shoot(player.position);
+                nextFireTime = Time.time + (1f / fireRate);
+            }
+        }
+    }
+    
+    bool IsPlayerInRange()
+    {
+        float distance = Vector2.Distance(transform.position, player.position);
+        return distance <= detectionRange;
+    }
+    
+
+    
+    void Shoot(Vector3 targetPosition)
+    {
+        if (bulletPrefab == null || firePoint == null) return;
+        
+        Vector2 direction = (targetPosition - firePoint.position).normalized;
+        
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        
+        // Set bullet direction and speed
+        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+        if (bulletRb != null)
+        {
+            bulletRb.velocity = direction * bulletSpeed;
+        }
+        
+        // Rotate bullet to face direction (optional, for visual purposes)
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+    
+    // Optional: Draw detection range in Scene view
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
+        
+        // Draw line to player if in range
+        if (player != null && IsPlayerInRange())
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(transform.position, player.position);
+        }
     }
 }
