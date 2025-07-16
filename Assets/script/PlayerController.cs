@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
 
+    private SurvivalTimer survivalTimer;
+
+
     [Header("Health System")]
     public int maxHealth = 100;
     private int currentHealth;
@@ -48,6 +51,8 @@ public class PlayerController : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
         UpdateHealthUI();
+        survivalTimer = FindObjectOfType<SurvivalTimer>();
+
     }
 
     private void OnEnable()
@@ -102,10 +107,19 @@ public class PlayerController : MonoBehaviour
 
         currentHealth -= damage;
         if (currentHealth <= 0)
-        {
-            currentHealth = 0;
-            Debug.Log("Player Mati");
-        }
+{
+    currentHealth = 0;
+    Debug.Log("Player Mati");
+
+    if (survivalTimer != null)
+    {
+        survivalTimer.StopTimer();
+    }
+
+    // Optional: disable movement
+    this.enabled = false;
+}
+
 
         StartCoroutine(HandleKnockback(direction.normalized));
         UpdateHealthUI();
